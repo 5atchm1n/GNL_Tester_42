@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/07 00:26:49 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/07 01:08:21 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ blue=$'\033[34m'
 green=$'\033[0;32m'
 reset=$'\033[0m'
 
+
+################################################################################
 
 echo ""
 echo ""
@@ -42,7 +44,7 @@ then
 else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
-#####################################################################
+################################################################################
 
 echo ""
 echo "$blue BUFFER = $orange 2  $reset"
@@ -64,7 +66,7 @@ else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
 echo ""
-######################################################################
+################################################################################
 
 echo "$blue BUFFER = $orange 1024  $reset"
 
@@ -84,7 +86,7 @@ else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
 echo ""
-#########################################################################
+################################################################################
 
 echo "$blue RUNNING BUFFER = $orange 4096  $reset"
 
@@ -103,4 +105,20 @@ then
 else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
+
+################################################################################
+
+echo ""
+echo ""
+
+echo "$blue checking diff file $orange $reset"
+
+if [ -s "diff_output" ] 
+then
+	echo "$orange TEST FAILED $reset"
+	echo "check diff_output for info"
+else
+	echo "$green TEST PASSED $reset"
+fi
+
 
