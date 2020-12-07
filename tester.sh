@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/07 01:08:21 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/07 04:42:58 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,18 +88,43 @@ fi
 echo ""
 ################################################################################
 
-echo "$blue RUNNING BUFFER = $orange 4096  $reset"
+echo "$blue RUNNING BUFFER = $orange 32  $reset"
 
-clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=4096
+clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=32
 
-./a.out > test_out/user_output_4096
+./a.out > test_out/user_output_32
 
-diff -u test_out/test_output_4096 test_out/user_output_4096 >> diff_output
+./a.out > test_out/test_output_32
+
+diff -u test_out/test_output_32 test_out/user_output_32 >> diff_output
 
 echo "$green test complete $reset"
 
 echo ""
-if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=4096 -fsanitize=address | grep -q 'ERROR'
+if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=32 -fsanitize=address | grep -q 'ERROR'
+then	
+	echo "$blue fsanitize=address $orange FAIL $reset"
+else
+	echo "$blue fsanitize=address $green PASS $reset"
+fi
+
+echo ""
+################################################################################
+
+echo "$blue RUNNING BUFFER = $orange 128  $reset"
+
+clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=128
+
+./a.out > test_out/user_output_128
+
+./a.out > test_out/test_output_128
+
+diff -u test_out/test_output_128 test_out/user_output_128 >> diff_output
+
+echo "$green test complete $reset"
+
+echo ""
+if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=32 -fsanitize=address | grep -q 'ERROR'
 then	
 	echo "$blue fsanitize=address $orange FAIL $reset"
 else
@@ -107,7 +132,6 @@ else
 fi
 
 ################################################################################
-
 echo ""
 echo ""
 

@@ -6,7 +6,7 @@
 /*   By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:45:53 by sshakya           #+#    #+#             */
-/*   Updated: 2020/12/07 00:32:08 by sshakya          ###   ########.fr       */
+/*   Updated: 2020/12/07 06:21:33 by sshakya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,6 @@ int		main(void)
 	printf("-------NO FILE------");
 	
 	printf("\nfinal return value = %d\n", k);
-	
-
 	
 	return (0);
 }
