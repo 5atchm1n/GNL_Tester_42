@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/07 04:42:58 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/07 06:25:45 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,8 +94,6 @@ clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.
 
 ./a.out > test_out/user_output_32
 
-./a.out > test_out/test_output_32
-
 diff -u test_out/test_output_32 test_out/user_output_32 >> diff_output
 
 echo "$green test complete $reset"
@@ -116,8 +114,6 @@ echo "$blue RUNNING BUFFER = $orange 128  $reset"
 clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=128
 
 ./a.out > test_out/user_output_128
-
-./a.out > test_out/test_output_128
 
 diff -u test_out/test_output_128 test_out/user_output_128 >> diff_output
 
