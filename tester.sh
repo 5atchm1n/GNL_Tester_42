@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/07 06:25:45 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/09 14:49:55 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,30 +20,14 @@ reset=$'\033[0m'
 
 
 ################################################################################
+################################################################################
 
 echo ""
 echo ""
 echo "$green TESTING GET_NEXT_LINE $reset"
 
-echo ""
 
-echo "$blue BUFFER = $orange 64  $reset"
-
-clang -Wall -Wextra -Werror  -D BUFFER_SIZE=64 get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c
-
-./a.out > test_out/user_output_64
-
-diff -u test_out/test_output_64 test_out/user_output_64 > diff_output
-
-echo "$green test complete $reset"
-
-echo ""
-if clang -Wall -Wextra -Werror  -D BUFFER_SIZE=64 -fsanitize=address get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c | grep -q 'ERROR'
-then
-	echo "$blue fsanitize=address $orange FAIL $reset"
-else
-	echo "$blue fsanitize=address $green PASS $reset"
-fi
+################################################################################
 ################################################################################
 
 echo ""
@@ -66,27 +50,55 @@ else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
 echo ""
+
+################################################################################
 ################################################################################
 
-echo "$blue BUFFER = $orange 1024  $reset"
+echo "$blue RUNNING BUFFER = $orange 8  $reset"
 
-clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=1024
+clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=8
 
-./a.out > test_out/user_output_1024
+./a.out > test_out/user_output_8
 
-diff -u test_out/test_output_1024 test_out/user_output_1024 >> diff_output
+diff -u test_out/test_output_8 test_out/user_output_8 >> diff_output
 
 echo "$green test complete $reset"
 
 echo ""
-if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=1024 -fsanitize=address | grep -q 'ERROR'
-then
+if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=8 -fsanitize=address | grep -q 'ERROR'
+then	
 	echo "$blue fsanitize=address $orange FAIL $reset"
 else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
+
 echo ""
+
 ################################################################################
+################################################################################
+
+echo "$blue RUNNING BUFFER = $orange 16  $reset"
+
+clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=16
+
+./a.out > test_out/user_output_16
+
+diff -u test_out/test_output_16 test_out/user_output_16 >> diff_output
+
+echo "$green test complete $reset"
+
+echo ""
+if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=16 -fsanitize=address | grep -q 'ERROR'
+then	
+	echo "$blue fsanitize=address $orange FAIL $reset"
+else
+	echo "$blue fsanitize=address $green PASS $reset"
+fi
+
+echo ""
+
+################################################################################
+###############################################################################
 
 echo "$blue RUNNING BUFFER = $orange 32  $reset"
 
@@ -106,7 +118,29 @@ else
 	echo "$blue fsanitize=address $green PASS $reset"
 fi
 
+################################################################################
+################################################################################
+
 echo ""
+echo "$blue BUFFER = $orange 64  $reset"
+
+clang -Wall -Wextra -Werror  -D BUFFER_SIZE=64 get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c
+
+./a.out > test_out/user_output_64
+
+diff -u test_out/test_output_64 test_out/user_output_64 > diff_output
+
+echo "$green test complete $reset"
+
+echo ""
+if clang -Wall -Wextra -Werror  -D BUFFER_SIZE=64 -fsanitize=address get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c | grep -q 'ERROR'
+then
+	echo "$blue fsanitize=address $orange FAIL $reset"
+else
+	echo "$blue fsanitize=address $green PASS $reset"
+fi
+
+################################################################################
 ################################################################################
 
 echo "$blue RUNNING BUFFER = $orange 128  $reset"
@@ -128,7 +162,29 @@ else
 fi
 
 ################################################################################
+################################################################################
+
+echo "$blue BUFFER = $orange 1024  $reset"
+
+clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=1024
+
+./a.out > test_out/user_output_1024
+
+diff -u test_out/test_output_1024 test_out/user_output_1024 >> diff_output
+
+echo "$green test complete $reset"
+
 echo ""
+if clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=1024 -fsanitize=address | grep -q 'ERROR'
+then
+	echo "$blue fsanitize=address $orange FAIL $reset"
+else
+	echo "$blue fsanitize=address $green PASS $reset"
+fi
+echo ""
+
+################################################################################
+################################################################################
 echo ""
 
 echo "$blue checking diff file $orange $reset"
