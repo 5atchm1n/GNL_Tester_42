@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/09 14:49:55 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/09 15:12:58 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -196,5 +196,3 @@ then
 else
 	echo "$green TEST PASSED $reset"
 fi
-
-

@@ -6,7 +6,7 @@
 /*   By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:45:53 by sshakya           #+#    #+#             */
-/*   Updated: 2020/12/07 06:21:33 by sshakya          ###   ########.fr       */
+/*   Updated: 2020/12/12 23:21:21 by sshakya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
-	printf("\nfinal return value = %d\n", k);
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 
 	// TEST 2
 
@@ -46,9 +46,9 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
-	printf("\nfinal return value = %d\n", k);
-	
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
+
 	// TEST 3
 
 	fd = open("text/64bit_line.txt", O_RDONLY);
@@ -59,10 +59,8 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
-	
-	printf("\nfinal return value = %d\n", k);
-	
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 	// TEST 4
 
 	fd = open("text/bar.txt", O_RDONLY);
@@ -73,9 +71,8 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
-	
-	printf("\nfinal return value = %d\n", k);
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 	
 	
 	// TEST 5
@@ -89,9 +86,8 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
-	
-	printf("\nfinal return value = %d\n", k);
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 	
 	// TEST 6
 
@@ -103,24 +99,22 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("-------EOF------");
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 	
-	printf("\nfinal return value = %d\n", k);
 	
 	// ERROR TEST
 	
 	fd = open("fake", O_RDONLY);
 
-	i = 1;
-	while ((k = get_next_line(fd, &line_buff)) > 0)
-	{
-		printf("line = %d | %d | %s\n", i, k, line_buff);
-		free(line_buff);
-		i++;
+	i = 0;
+	k = get_next_line(fd, &line_buff);
+	if (k < 0)
+		printf("ERROR RETURN - TEST PASS");
+	else {
+	printf("line = %d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
 	}
-	printf("-------NO FILE------");
-	
-	printf("\nfinal return value = %d\n", k);
 	
 	return (0);
 }
