@@ -1,0 +1,22 @@
+--- user_output_16	2020-12-17 01:47:56.503669085 +0100
++++ user_output_32	2020-12-17 01:47:56.843669086 +0100
+@@ -206,8 +206,7 @@
+ line = 184 | 1 | ever reach Mina before I do, let it bring my good-bye. Here comes the
+ line = 185 | 1 | coach!
+ line = 186 | 1 | 
+-line = 187 | 1 |        *       *       *       *       *
+-line = 188 | 0 | 
++line = 187 | 0 |        *       *       *       *       *
+ 
+ --------------------------------------------
+ 	ANOTHER NORMAL TEXT
+@@ -1099,8 +1098,7 @@
+ --------------------------------------------
+ 
+ line =  1 | 1 | blahblah
+-line =  2 | 1 | blahblah
+-line =  3 | 0 | 
++line =  2 | 0 | blahblah
+ 
+ --------------------------------------------
+ 	TEST 2
