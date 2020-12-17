@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   GNL_test2.c                                        :+:      :+:    :+:   */
+/*   GNL_test.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:45:53 by sshakya           #+#    #+#             */
-/*   Updated: 2020/12/17 02:41:49 by sshakya          ###   ########.fr       */
+/*   Updated: 2020/12/17 18:13:33 by sshakya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 2
@@ -53,7 +53,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %3d | %d | %s\n", i, k, line_buff);
+	printf("    EOF    | %d | %s\n", k, line_buff);
 	free(line_buff);
 	
 	// TEST 3
@@ -70,7 +70,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %3d | %d | %s\n", i, k, line_buff);
+	printf("    EOF    | %d | %s\n", k, line_buff);
 	free(line_buff);
 	// TEST 4
 	
@@ -86,7 +86,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 	
 	// TEST 5
@@ -102,7 +102,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	
@@ -119,7 +119,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 	
 	// TEST 7
@@ -135,7 +135,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -152,7 +152,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -169,7 +169,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -186,7 +186,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// ERROR TEST
