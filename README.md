@@ -3,10 +3,10 @@
 
 ### Copy your GNL files into the repos folder and run the tests
 
-check test_out for output and diff file
+check **test_out** for output and diff file
 
-this does not test if your output is perfect !
-it allows you to test your output !
+## this does not test if your output is perfect !
+## it allows you to test your output !
 
 the diff file compares the output of your functions with each other.
 
