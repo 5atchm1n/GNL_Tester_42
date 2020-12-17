@@ -3,7 +3,7 @@
 
 ### Copy your GNL files into the repos folder and run the tests
 
-check **test_out** for output and diff file
+:mag: check **test_out** for output and diff file
 
 ####  :x: this does not test if your output is perfect :x:!
 #### it allows you see your functions output !
