@@ -1,7 +1,7 @@
 # GNL_Tester_42
-Basic Tester for get_next_line project
+## Basic Tester for get_next_line project
 
-Copy your GNL files into the repos folder and run the tests
+### Copy your GNL files into the repos folder and run the tests
 
 check test_out for output and diff file
 
