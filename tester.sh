@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/17 18:15:18 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/17 19:02:37 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,9 @@ echo "$green TESTING GET_NEXT_LINE $reset"
 
 ################################################################################
 ################################################################################
+
+echo ""
+~/.norminette/norminette.rb get_next_line.c get_next_line_utils.c get_next_line.h
 
 echo ""
 echo "$blue BUFFER = $orange 2  $reset"
