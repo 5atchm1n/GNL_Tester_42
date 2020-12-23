@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   GNL_test.c                                         :+:      :+:    :+:   */
+/*   GNL_test_small.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:45:53 by sshakya           #+#    #+#             */
-/*   Updated: 2020/12/23 01:32:47 by sshakya          ###   ########.fr       */
+/*   Updated: 2020/12/23 00:56:25 by sshakya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,73 +26,6 @@ int		main(void)
 	line_buff = NULL;
 
 	printf("\n--------------------------------------------\n");
-	printf("\tLorem Ipsum - line as paragraph");
-	printf("\n--------------------------------------------\n\n");
-
-	fd = open("text/lorem_ipsum.txt", O_RDONLY);
-	i = 1;
-	while ((k = get_next_line(fd, &line_buff)) > 0)
-	{
-		printf("line = %2d | %d | %s\n", i, k, line_buff);
-		free(line_buff);
-		i++;
-	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
-	free(line_buff);
-
-	// TEST 2
-
-	printf("\n--------------------------------------------\n");
-	printf("\tNORMAL TEXT");
-	printf("\n--------------------------------------------\n\n");
-
-	fd = open("text/normal.txt", O_RDONLY);
-	i = 1;
-	while ((k = get_next_line(fd, &line_buff)) > 0)
-	{
-		printf("line = %3d | %d | %s\n", i, k, line_buff);
-		free(line_buff);
-		i++;
-	}
-	printf("line = %3d | %d | %s\n", i, k, line_buff);
-	free(line_buff);
-
-	// TEST 3
-
-	printf("\n--------------------------------------------\n");
-	printf("\tANOTHER NORMAL TEXT");
-	printf("\n--------------------------------------------\n\n");
-
-	fd = open("text/bar.txt", O_RDONLY);
-	i = 1;
-	while ((k = get_next_line(fd, &line_buff)) > 0)
-	{
-		printf("line = %3d | %d | %s\n", i, k, line_buff);
-		free(line_buff);
-		i++;
-	}
-	printf("line = %3d | %d | %s\n", i, k, line_buff);
-	free(line_buff);
-	// TEST 4
-
-	printf("\n--------------------------------------------\n");
-	printf("\tTHIS IS AN EMPTY FILE");
-	printf("\n--------------------------------------------\n\n");
-
-	fd = open("text/empty.txt", O_RDONLY);
-	i = 1;
-	while ((k = get_next_line(fd, &line_buff)) > 0)
-	{
-		printf("line = %2d | %d | %s\n", i, k, line_buff);
-		free(line_buff);
-		i++;
-	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
-	free(line_buff);
-
-	// TEST 5
-
-	printf("\n--------------------------------------------\n");
 	printf("\t64 BIT PARAGRAPH");
 	printf("\n--------------------------------------------\n\n");
 	fd = open("text/64bit_paragraph.txt", O_RDONLY);
@@ -103,12 +36,12 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
-
+	
 	// TEST 6
-
+	
 	printf("\n--------------------------------------------\n");
 	printf("\t64 bit line");
 	printf("\n--------------------------------------------\n\n");
@@ -120,11 +53,11 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
-
+	
 	// TEST 7
-
+	
 	printf("\n--------------------------------------------\n");
 	printf("\t\"empty lines\"");
 	printf("\n--------------------------------------------\n\n");
@@ -136,7 +69,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -153,7 +86,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -170,7 +103,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// TEST 8
@@ -187,7 +120,7 @@ int		main(void)
 		free(line_buff);
 		i++;
 	}
-	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	printf("    EOF   | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// ERROR TEST
@@ -202,8 +135,8 @@ int		main(void)
 	if (k < 0)
 		printf("ERROR RETURN - TEST PASS\n\n");
 	else {
-		printf("ERROR RETURN - FAILED");
+	printf("ERROR RETURN - FAILED");
 	}
-
+	
 	return (0);
 }

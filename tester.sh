@@ -6,7 +6,7 @@
 #    By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/07 00:17:04 by sshakya           #+#    #+#              #
-#    Updated: 2020/12/17 19:02:37 by sshakya          ###   ########.fr        #
+#    Updated: 2020/12/22 23:01:41 by sshakya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -334,7 +334,7 @@ clang -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.
 
 echo "$green test complete $reset"
 
-clang -Wall -Wextra -Werror -fsanitize=address get_next_line.c get_next_line.h get_next_line_utils.c GNL_test.c -D BUFFER_SIZE=32
+clang -Wall -Wextra -Werror -fsanitize=address get_next_line.c get_next_line.h get_next_line_utils.c GNL_test_bonus.c -D BUFFER_SIZE=32
 
 ./a.out > mem_test_bonus 2>mem_error_bonus_32
 
