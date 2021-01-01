@@ -6,7 +6,7 @@
 /*   By: sshakya <sshakya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 20:45:53 by sshakya           #+#    #+#             */
-/*   Updated: 2020/12/23 01:32:47 by sshakya          ###   ########.fr       */
+/*   Updated: 2020/12/31 01:15:27 by sshakya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		main(void)
 	}
 	printf("line = %2d | %d | %s\n", i, k, line_buff);
 	free(line_buff);
-
+	close(fd);
 	// TEST 2
 
 	printf("\n--------------------------------------------\n");
@@ -56,7 +56,7 @@ int		main(void)
 	}
 	printf("line = %3d | %d | %s\n", i, k, line_buff);
 	free(line_buff);
-
+	close(fd);
 	// TEST 3
 
 	printf("\n--------------------------------------------\n");
@@ -73,7 +73,9 @@ int		main(void)
 	}
 	printf("line = %3d | %d | %s\n", i, k, line_buff);
 	free(line_buff);
+
 	// TEST 4
+
 
 	printf("\n--------------------------------------------\n");
 	printf("\tTHIS IS AN EMPTY FILE");
@@ -93,7 +95,7 @@ int		main(void)
 	// TEST 5
 
 	printf("\n--------------------------------------------\n");
-	printf("\t64 BIT PARAGRAPH");
+	printf("\t32 -- 64 BIT Lines - no return");
 	printf("\n--------------------------------------------\n\n");
 	fd = open("text/64bit_paragraph.txt", O_RDONLY);
 	i = 1;
@@ -110,7 +112,7 @@ int		main(void)
 	// TEST 6
 
 	printf("\n--------------------------------------------\n");
-	printf("\t64 bit line");
+	printf("\t64 bit line - no return");
 	printf("\n--------------------------------------------\n\n");
 	fd = open("text/64bit_line.txt", O_RDONLY);
 	i = 1;
@@ -142,7 +144,7 @@ int		main(void)
 	// TEST 8
 
 	printf("\n--------------------------------------------\n");
-	printf("\t25 NEWLINES ");
+	printf("\t8 NEWLINES ");
 	printf("\n--------------------------------------------\n\n");
 
 	fd = open("text/only_newline.txt", O_RDONLY);
@@ -159,7 +161,7 @@ int		main(void)
 	// TEST 8
 
 	printf("\n--------------------------------------------\n");
-	printf("\tTEST 1");
+	printf("\t2 lines - no new line ");
 	printf("\n--------------------------------------------\n\n");
 
 	fd = open("text/test1.txt", O_RDONLY);
@@ -176,7 +178,7 @@ int		main(void)
 	// TEST 8
 
 	printf("\n--------------------------------------------\n");
-	printf("\tTEST 2");
+	printf("\t2 lines with new line");
 	printf("\n--------------------------------------------\n\n");
 
 	fd = open("text/test2.txt", O_RDONLY);
@@ -188,6 +190,21 @@ int		main(void)
 		i++;
 	}
 	printf("line = %2d | %d | %s\n", i, k, line_buff);
+	free(line_buff);
+
+	printf("\n--------------------------------------------\n");
+	printf("\t TESTING STDIN (fd = 0) && ctrl+D ;) ");
+	printf("\n--------------------------------------------\n\n");
+
+//	fd = open("text/test2.txt", O_RDONLY);
+	i = 1;
+	while ((k = get_next_line(0, &line_buff)) > 0)
+	{
+		printf("| %d | %s\n", k, line_buff);
+		free(line_buff);
+		i++;
+	}
+	printf("CTRL + D | %d | %s\n", k, line_buff);
 	free(line_buff);
 
 	// ERROR TEST
